@@ -43,4 +43,10 @@ jobs:
 workflows:
   orb-free-workflow:
     jobs:
+      - build
       - test
+          requires:
+          - build
+      - analyze
+          requires:
+          - test
